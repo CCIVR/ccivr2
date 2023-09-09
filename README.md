@@ -4,7 +4,7 @@
 # CCIVR2
 
 ## Overview
-CCIVR2 is a Python package tool that facilitates the identification of cis-NATs (cis-natural antisense transcript) as well as antisense transcripts that do not overlap with sense genes but have some proximity of transcription start site (TSS) or transcription end site (TES) to each other (including divergent and convergent transcriptions).
+CCIVR2 is a Python package tool that facilitates the identification of cis-NATs (cis-natural antisense transcript) as well as antisense transcripts that do not overlap with sense genes but have some proximity of transcription start site (TSS) or transcript end site (TES) to each other (including divergent and convergent transcriptions).
 
 CCIVR2 consists of 3 different modes for the identification of antisense transcripts.
 
@@ -31,7 +31,7 @@ CCIVR2 generates two CSV-formatted output files: a table file containing a list 
 You can install CCIVR2 using a package manager `pip` by typing the following command:           
 
 ```
-pip install git+https://github.com/CCIVR/ccivr2.git（仮）
+pip install git+https://github.com/CCIVR/ccivr2.git
 ```
 
 Note that this won't work if you don't have git installed on your computer. In that case, download the ZIP file from this site and enter the following command:
@@ -74,8 +74,8 @@ You can append other gene annotations by adding extra columns such as “**GeneS
 
 You can also append expression profile information obtained from RNA-seq analysis by adding extra columns such as **"TPM"**, **"FPKM"**, **"fold_change"**, **"padj"**, and so on.
 
-See [the test file](data/Test_file.csv) for an example of the input file. 
-(The test file contains mouse gene datasets accompanied by expression profiling of mouse ESCs upon differentiation via embryoid body formation, which is consistent with the input file used for the CCIVR2 analysis in Figure 4 of our paper, Suzuki M *et al*., submitted.)
+See [the test file](data/ESCs_differentiation_exp_genes.csv) for an example of the input file. 
+(The test file contains mouse gene datasets accompanied by expression profiling of mouse ESCs upon differentiation via embryoid body formation, which is consistent with the input file used for the CCIVR2 analysis in Figure 4 of our paper, Suzuki M *et al*., 13:14807, 2023.)
 
 
 ## Usage
@@ -94,7 +94,7 @@ ccivr2 [input CSV path] --output [save directory path]
 Then select the identification mode as follows:
 
 ```
-Select the extraction mode. [1/2/3]:
+Select the identification mode. [1/2/3]:
 ```
 
 ### Mode 1: Cis-NATs mode
@@ -106,7 +106,7 @@ For example, if you set the parameters as follows,
 ```
 Set the range of AS_TSS position relative to S_TSS [min,max]: -1000,1000
 ```
-you can identify all antisense transcripts whose AS\_TSS is between 1000bp upstream and 1000bp downstream of the S\_TSS. See the figure indicated below.  
+you can identify all antisense transcripts whose AS\_TSS is between 1000 bp upstream and 1000 bp downstream of the S\_TSS. See the figure indicated below.  
 
 ![Mode2](Mode2.png)
 
@@ -116,11 +116,11 @@ For example, if you select the parameters as follows,
 ```
 Set the range of AS_TES position relative to S_TES [min,max]: -1000,1000
 ```
-you can identify all antisense transcripts whose TES is between 1000bp upstream and 1000bp downstream of the S\_TES. See the figure indicated below.
+you can identify all antisense transcripts whose TES is between 1000 bp upstream and 1000 bp downstream of the S\_TES. See the figure indicated below.
 
 ![Mode3](Mode3.png)
 
-After all these parameters set, the identification starts.
+After all these parameters set, the identification process starts.
 
 ### The output files
 
@@ -137,7 +137,7 @@ If no genes are extracted, these files are not created.
 
 Examples of these files in each of the three modes can be found [here](data/examples).
 
-<!-- Completing the entire process with the test file can take from minutes to tens of minutes on a standard-powered computer (for example, it takes 6:34 on an iMac 2017 equipped with a 3.4 GHz Intel Core i5). -->
+The time required for the entire process depends on the selected mode and extraction conditions. For reference, it takes around 1 minute to process the test file on an iMac 2017 equipped with a 3.4 GHz Intel Core i5 when running in Mode 2 with the AS_TSS range set to (min: -1000, max: 1000).
 
 ## Uninstallation
 If you no longer use the package, you can uninstall it by typing the following command:
@@ -153,6 +153,6 @@ Tatsuya Ohhata conceived CCIVR2. Maya Suzuki designed the CCIVR2 algorithm and i
 CCIVR2 is licensed under the [MIT License](LICENSE).
 
 ## Reference
-Suzuki M *et al*., submitted
+Suzuki M *et al*., 13:14807, 2023.
 
-Updated on April 10th, 2023
+Updated on September 9th, 2023
