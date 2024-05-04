@@ -155,4 +155,4 @@ CCIVR2 is licensed under the [MIT License](LICENSE).
 ## Reference
 Suzuki M *et al*., 13:14807, 2023.
 
-Updated on September 9th, 2023
+Updated on May 4th, 2024
