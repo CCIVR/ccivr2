@@ -1,0 +1,15 @@
+mode,2,
+AS_TSS position [min],-1000,
+AS_TSS position [max],1000,
+total genes,15263,
+extracted genes,2539,16.63%
+Overlap,1007,6.60%
+Non_overlap,1544,10.12%
+fTT,0,0.00%
+nTT,0,0.00%
+TT,0,0.00%
+FO,12,0.08%
+EB,11,0.07%
+HH,984,6.45%
+nHH,1544,10.12%
+fHH,0,0.00%
