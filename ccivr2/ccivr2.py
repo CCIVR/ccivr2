@@ -58,7 +58,7 @@ def extract_one_type_cisnats(method, genes_plus, genes_minus, tss_range, tes_ran
         "HH":"(min1 < min0) & (max1 >= min0) & (max1 <= max0)",
         "TT":"(min1 >= min0) & (min1 <= max0) & (max1 > max0)",
         "TSS comparison":"(max1 >= min0 + {min}) & (max1 <= min0 + {max})".format(min=tss_range[0], max=tss_range[1]),
-        "TES comparison":"(min1 >= max0 + {min}) & (min1 <= max0 + {max})".format(max=tes_range[0], max=tes_range[1])
+        "TES comparison":"(min1 >= max0 + {min}) & (min1 <= max0 + {max})".format(min=tes_range[0], max=tes_range[1])
         }
 
     FILTER_MINUS_PLUS= {
